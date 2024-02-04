@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 class="string:x-canonical-private-synchronous:sys-notify"
 media_icon="/usr/share/icons/Papirus-Dark/48x48/devices/media-tape.svg"

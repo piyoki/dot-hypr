@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 class="string:x-canonical-private-synchronous:sys-notify"
 volume_up_icon="/usr/share/icons/Papirus-Dark/48x48/devices/audio-speaker-left-side-testing.svg"

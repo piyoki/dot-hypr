@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 enable_icon="/usr/share/icons/Papirus-Dark/48x48/status/state_running.svg"
 
