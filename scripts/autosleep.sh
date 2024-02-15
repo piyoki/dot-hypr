@@ -1,11 +1,8 @@
 #!/bin/sh
 
-enable_icon="/usr/share/icons/Papirus-Dark/48x48/status/state_running.svg"
-
-notify-send -i $enable_icon 'Swayidle' '\nAutosleep enabled'
+icon="state_running"
+notify-send -i $icon 'Swayidle' 'Autosleep enabled'
 
 swayidle -w \
   timeout 360 'hyprctl dispatch dpms off' \
-  resume 'hyprctl dispatch dpms on' \
-  after-resume 'waybar' \
-  before-sleep 'pkill waybar' &
+  resume 'hyprctl dispatch dpms on' &
