@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 class="string:x-canonical-private-synchronous:sys-notify"
-volume_up_icon="/usr/share/icons/Papirus-Dark/48x48/devices/audio-speaker-left-side-testing.svg"
-volume_down_icon="/usr/share/icons/Papirus-Dark/48x48/status/notification-audio-volume-medium.svg"
-mute_icon="/usr/share/icons/Papirus-Dark/48x48/status/notification-audio-volume-muted.svg"
-volume_high_icon="/usr/share/icons/Papirus-Dark/48x48/status/notification-audio-volume-high.svg"
+volume_up_icon="speaker_volume_up"
+volume_down_icon="speaker_volume_down"
+mute_icon="speaker_mute"
+volume_high_icon="speaker_volume_high"
 
 # Get Volume
 get_volume() {
