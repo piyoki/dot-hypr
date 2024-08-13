@@ -1,0 +1,27 @@
+name: Trigger downstream workflow
+
+on:
+  workflow_dispatch:
+
+env:
+  DOWNSTREAM_REPO: dotfiles.nix
+  WORKFLOW_FILE: sync-upstream.yml
+  REF: ${{ github.event.repository.default_branch }}
+  PAYLOAD: '{"input":"hypr"}'
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: convictional/trigger-workflow-and-wait@v1.6.5
+      with:
+        owner: ${{ github.repository_owner }}
+        repo: ${{ env.DOWNSTREAM_REPO }}
+        github_token: ${{ secrets.ACCESS_TOKEN }}
+        github_user: ${{ github.repository_owner }}
+        workflow_file_name: ${{ env.WORKFLOW_FILE }}
+        ref: ${{ env.REF }}
+        client_payload: ${{ env.PAYLOAD }}
+        propagate_failure: false
+        trigger_workflow: true
+        wait_workflow: false
