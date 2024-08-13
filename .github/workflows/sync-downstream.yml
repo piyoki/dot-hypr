@@ -13,6 +13,14 @@ jobs:
   dispatch-downstream-workflow:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub auth token
+        # https://github.com/tibdex/github-app-token
+        id: generate_token
+        uses: tibdex/github-app-token@v2.1.0
+        with:
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Extract sync target from repo name
         shell: bash
         run: echo "TARGET=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}" | sed 's/dot-//' >> $GITHUB_OUTPUT
@@ -23,7 +31,7 @@ jobs:
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ env.DOWNSTREAM_REPO }}
-          github_token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ steps.generate_token.outputs.token }}
           github_user: ${{ github.repository_owner }}
           workflow_file_name: ${{ env.WORKFLOW_FILE }}
           ref: ${{ env.REF }}
