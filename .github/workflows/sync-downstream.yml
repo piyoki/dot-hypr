@@ -1,27 +1,46 @@
+---
 name: Trigger downstream workflow
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - ${{ github.event.repository.default_branch }}
+      - 'x1-carbon'
 
 env:
   DOWNSTREAM_REPO: dotfiles.nix
   WORKFLOW_FILE: sync-upstream.yml
   REF: ${{ github.event.repository.default_branch }}
-  PAYLOAD: '{"input":"hypr"}'
 
 jobs:
-  scrape:
+  dispatch-downstream-workflow:
     runs-on: ubuntu-latest
     steps:
-    - uses: convictional/trigger-workflow-and-wait@v1.6.5
-      with:
-        owner: ${{ github.repository_owner }}
-        repo: ${{ env.DOWNSTREAM_REPO }}
-        github_token: ${{ secrets.ACCESS_TOKEN }}
-        github_user: ${{ github.repository_owner }}
-        workflow_file_name: ${{ env.WORKFLOW_FILE }}
-        ref: ${{ env.REF }}
-        client_payload: ${{ env.PAYLOAD }}
-        propagate_failure: false
-        trigger_workflow: true
-        wait_workflow: false
+      - name: Generate GitHub auth token
+        # https://github.com/tibdex/github-app-token
+        id: generate_token
+        uses: tibdex/github-app-token@v2.1.0
+        with:
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - name: Extract sync target from repo name
+        shell: bash
+        run: echo "TARGET=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}" | sed 's/dot-//' >> $GITHUB_OUTPUT
+        id: sync_target
+
+      - name: Trigger
+        uses: convictional/trigger-workflow-and-wait@v1.6.5
+        with:
+          owner: ${{ github.repository_owner }}
+          repo: ${{ env.DOWNSTREAM_REPO }}
+          github_token: ${{ steps.generate_token.outputs.token }}
+          github_user: ${{ github.repository_owner }}
+          workflow_file_name: ${{ env.WORKFLOW_FILE }}
+          ref: ${{ env.REF }}
+          client_payload: '{"target":"${{ steps.sync_target.outputs.TARGET }}"}'
+          trigger_workflow: true
+          propagate_failure: false
+          wait_interval: 60
+          wait_workflow: true
