@@ -42,6 +42,15 @@ unfocus = "hide"
 margin = 100
 lazy = true
 
+[scratchpads."im/telegram"]
+animation = "fromTop"
+command = "telegram-desktop"
+class = "org.telegram.desktop"
+size = "30% 80%"
+unfocus = "hide"
+margin = 120
+lazy = false
+
 # === Shortcuts Menu ===
 [shortcuts_menu]
 engine = "rofi"
