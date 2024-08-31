@@ -1,0 +1,71 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+  "shortcuts_menu"
+]
+
+# === Scratchpads ===
+
+[scratchpads."top/amdgpu_top"]
+animation = "fromRight"
+command = "alacritty --command amdgpu_top"
+class = "Alacritty"
+size = "30% 80%"
+unfocus = "hide"
+margin = 50
+lazy = false
+
+[scratchpads."top/btop"]
+animation = "fromRight"
+command = "alacritty --command btop"
+class = "Alacritty"
+size = "30% 80%"
+unfocus = "hide"
+margin = 50
+lazy = false
+
+[scratchpads.term]
+animation = "fromTop"
+command = "alacritty"
+class = "Alacritty"
+size = "30% 60%"
+unfocus = "hide"
+margin = 100
+lazy = false
+
+[scratchpads.volume]
+animation = "fromTop"
+command = "pavucontrol"
+class = "org.pulseaudio.pavucontrol"
+size = "30% 60%"
+unfocus = "hide"
+margin = 100
+lazy = true
+
+# === Shortcuts Menu ===
+[shortcuts_menu]
+engine = "rofi"
+parameters = "-dmenu -i -p Menu -theme $HOME/.config/rofi/conf/launcher.rasi"
+
+[shortcuts_menu.entries]
+"Clean clipboard history" = "cliphist wipe"
+"Clipboard history" = [
+    {name="entry", command="$HOME/.config/rofi/bin/clipboard"},
+    ""
+]
+"Screenshot monitor" = [
+    {name="monitor", command='hyprctl activeworkspace | grep -oP "on monitor \K[^:]+"'},
+    "sleep 0.3; $HOME/.config/hypr/scripts/screenshot-monitor.sh [monitor]"
+]
+"Copy password" = [
+    {name="entry", command="gopass ls --flat"},
+    "gopass show -c [entry]"
+]
+"Kill program" = [
+    {name="entry", command="pgrep -u $USER -l | awk '{print $2}'"},
+    "pkill [entry]"
+]
+"Video recording" = [
+    {name="entry", command="$HOME/.config/rofi/bin/video-recording-menu"},
+    ""
+]
