@@ -7,50 +7,50 @@ plugins = [
 
 # === Scratchpads ===
 
-[scratchpads."top/amdgpu_top"]
-animation = "fromRight"
-command = "alacritty --command amdgpu_top"
+[scratchpads."top/gputop"]
+animation = "fromTop"
+command = "alacritty --command nvtop"
 class = "Alacritty"
-size = "30% 80%"
+size = "70% 70%"
 unfocus = "hide"
-margin = "2%"
-lazy = false
+margin = "20%"
+lazy = true
 
 [scratchpads."top/btop"]
-animation = "fromRight"
+animation = "fromTop"
 command = "alacritty --command btop"
 class = "Alacritty"
-size = "30% 80%"
+size = "70% 70%"
 unfocus = "hide"
-margin = "2%"
-lazy = false
+margin = "20%"
+lazy = true
 
 [scratchpads.term]
 animation = "fromTop"
 command = "alacritty"
 class = "Alacritty"
-size = "30% 60%"
+size = "70% 70%"
 unfocus = "hide"
-margin = "10%"
-lazy = false
+margin = "20%"
+lazy = true
 
 [scratchpads.volume]
 animation = "fromTop"
 command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
-size = "30% 60%"
+size = "70% 70%"
 unfocus = "hide"
-margin = "10%"
+margin = "20%"
 lazy = true
 
 [scratchpads."im/telegram"]
 animation = "fromTop"
 command = "telegram-desktop"
 class = "org.telegram.desktop"
-size = "30% 80%"
+size = "70% 70%"
 unfocus = "hide"
-margin = "10%"
-lazy = false
+margin = "20%"
+lazy = true
 
 # === Shortcuts Menu ===
 [shortcuts_menu]
@@ -82,5 +82,5 @@ parameters = "-dmenu -i -p Menu -theme $HOME/.config/rofi/conf/launcher.rasi"
 
 # === Layout Center ===
 [layout_center]
-margin = 60
-offset = [0, 30]
+margin = [60, 70]
+offset = [2600, 60]
