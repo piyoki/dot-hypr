@@ -1,7 +1,8 @@
 [pyprland]
 plugins = [
   "scratchpads",
-  "shortcuts_menu"
+  "shortcuts_menu",
+  "layout_center"
 ]
 
 # === Scratchpads ===
@@ -78,3 +79,8 @@ parameters = "-dmenu -i -p Menu -theme $HOME/.config/rofi/conf/launcher.rasi"
     {name="entry", command="$HOME/.config/rofi/bin/video-recording-menu"},
     ""
 ]
+
+# === Layout Center ===
+[layout_center]
+margin = 60
+offset = [0, 30]
