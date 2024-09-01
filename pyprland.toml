@@ -7,14 +7,14 @@ plugins = [
 
 # === Scratchpads ===
 
-[scratchpads."top/amdgpu_top"]
+[scratchpads."top/gputop"]
 animation = "fromRight"
 command = "alacritty --command amdgpu_top"
 class = "Alacritty"
 size = "30% 80%"
 unfocus = "hide"
 margin = "2%"
-lazy = false
+lazy = true
 
 [scratchpads."top/btop"]
 animation = "fromRight"
@@ -23,7 +23,7 @@ class = "Alacritty"
 size = "30% 80%"
 unfocus = "hide"
 margin = "2%"
-lazy = false
+lazy = true
 
 [scratchpads.term]
 animation = "fromTop"
@@ -32,7 +32,7 @@ class = "Alacritty"
 size = "30% 60%"
 unfocus = "hide"
 margin = "10%"
-lazy = false
+lazy = true
 
 [scratchpads.volume]
 animation = "fromTop"
@@ -50,7 +50,7 @@ class = "org.telegram.desktop"
 size = "30% 80%"
 unfocus = "hide"
 margin = "10%"
-lazy = false
+lazy = true
 
 # === Shortcuts Menu ===
 [shortcuts_menu]
