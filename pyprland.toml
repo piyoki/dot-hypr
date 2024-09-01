@@ -13,7 +13,7 @@ command = "alacritty --command amdgpu_top"
 class = "Alacritty"
 size = "30% 80%"
 unfocus = "hide"
-margin = 50
+margin = "2%"
 lazy = false
 
 [scratchpads."top/btop"]
@@ -22,7 +22,7 @@ command = "alacritty --command btop"
 class = "Alacritty"
 size = "30% 80%"
 unfocus = "hide"
-margin = 50
+margin = "2%"
 lazy = false
 
 [scratchpads.term]
@@ -31,7 +31,7 @@ command = "alacritty"
 class = "Alacritty"
 size = "30% 60%"
 unfocus = "hide"
-margin = 100
+margin = "10%"
 lazy = false
 
 [scratchpads.volume]
@@ -40,7 +40,7 @@ command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
 size = "30% 60%"
 unfocus = "hide"
-margin = 100
+margin = "10%"
 lazy = true
 
 [scratchpads."im/telegram"]
@@ -49,7 +49,7 @@ command = "telegram-desktop"
 class = "org.telegram.desktop"
 size = "30% 80%"
 unfocus = "hide"
-margin = 120
+margin = "10%"
 lazy = false
 
 # === Shortcuts Menu ===
