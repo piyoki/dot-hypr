@@ -6,7 +6,6 @@ plugins = [
 ]
 
 # === Scratchpads ===
-
 [scratchpads."top/gputop"]
 animation = "fromRight"
 command = "alacritty --command amdgpu_top"
@@ -48,7 +47,6 @@ animation = "fromTop"
 command = "telegram-desktop"
 class = "org.telegram.desktop"
 size = "30% 80%"
-unfocus = "hide"
 margin = "10%"
 lazy = true
 
