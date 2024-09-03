@@ -43,9 +43,12 @@ margin = "10%"
 lazy = true
 
 [scratchpads."im/telegram"]
+pinned = false
 animation = "fromTop"
 command = "telegram-desktop"
+match_by = "initialTitle"
 class = "org.telegram.desktop"
+initialTitle = "Telegram"
 size = "30% 80%"
 margin = "10%"
 lazy = true
