@@ -9,7 +9,7 @@ plugins = [
 [scratchpads."top/gputop"]
 animation = "fromRight"
 command = "alacritty --command amdgpu_top"
-class = "Alacritty"
+class = "gputop"
 size = "30% 80%"
 unfocus = "hide"
 margin = "2%"
@@ -18,7 +18,7 @@ lazy = true
 [scratchpads."top/btop"]
 animation = "fromRight"
 command = "alacritty --command btop"
-class = "Alacritty"
+class = "btop"
 size = "30% 80%"
 unfocus = "hide"
 margin = "2%"
@@ -27,7 +27,7 @@ lazy = true
 [scratchpads.term]
 animation = "fromTop"
 command = "alacritty"
-class = "Alacritty"
+class = "term"
 size = "30% 60%"
 unfocus = "hide"
 margin = "10%"
@@ -36,7 +36,7 @@ lazy = true
 [scratchpads.volume]
 animation = "fromTop"
 command = "pavucontrol"
-class = "org.pulseaudio.pavucontrol"
+class = "pavucontrol"
 size = "30% 60%"
 unfocus = "hide"
 margin = "10%"
