@@ -9,7 +9,7 @@ plugins = [
 [scratchpads."top/gputop"]
 animation = "fromTop"
 command = "alacritty --command nvtop"
-class = "Alacritty"
+class = "gnutop"
 size = "70% 70%"
 unfocus = "hide"
 margin = "20%"
@@ -18,7 +18,7 @@ lazy = true
 [scratchpads."top/btop"]
 animation = "fromTop"
 command = "alacritty --command btop"
-class = "Alacritty"
+class = "btop"
 size = "70% 70%"
 unfocus = "hide"
 margin = "20%"
@@ -27,16 +27,16 @@ lazy = true
 [scratchpads.term]
 animation = "fromTop"
 command = "alacritty"
-class = "Alacritty"
+class = "term"
 size = "70% 70%"
-unfocus = "hide"
 margin = "20%"
+unfocus = "hide"
 lazy = true
 
 [scratchpads.volume]
 animation = "fromTop"
 command = "pavucontrol"
-class = "org.pulseaudio.pavucontrol"
+class = "pavucontrol"
 size = "70% 70%"
 unfocus = "hide"
 margin = "20%"
