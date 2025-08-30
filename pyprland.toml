@@ -88,5 +88,5 @@ parameters = "-dmenu -i -p Menu -theme $HOME/.config/rofi/conf/launcher.rasi"
 
 # === Layout Center ===
 [layout_center]
-margin = 60
+margin = [1600, 60]
 offset = [0, 30]
