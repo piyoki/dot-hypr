@@ -1,5 +1,5 @@
 [pyprland]
-hyprland_version = "0.46.0"
+hyprland_version = "0.50.0"
 plugins = [
   "scratchpads",
   "shortcuts_menu",
@@ -7,52 +7,56 @@ plugins = [
 ]
 
 # === Scratchpads ===
+[scratchpads."windows.common"]
+close_on_hide = true
+pinned = true
+lazy = true
+
+[scratchpads."windows.app"]
+lazy = true
+
+[scratchpads."windows.terminal"]
+use = "windows.common"
+class = "Alacritty"
+
 [scratchpads."top/gputop"]
 animation = "fromRight"
 command = "alacritty --command amdgpu_top"
-class = "gputop"
 size = "30% 80%"
-unfocus = "hide"
 margin = "2%"
-lazy = true
+use = "windows.terminal"
 
 [scratchpads."top/btop"]
 animation = "fromRight"
 command = "alacritty --command btop"
-class = "btop"
 size = "30% 80%"
-unfocus = "hide"
 margin = "2%"
-lazy = true
+use = "windows.terminal"
 
 [scratchpads.term]
 animation = "fromTop"
 command = "alacritty"
-class = "term"
 size = "30% 60%"
-unfocus = "hide"
 margin = "10%"
-lazy = true
+use = "windows.terminal"
 
 [scratchpads.volume]
 animation = "fromTop"
 command = "pavucontrol"
-class = "pavucontrol"
+class = "org.pulseaudio.pavucontrol"
 size = "30% 60%"
-unfocus = "hide"
 margin = "10%"
-lazy = true
+use = "windows.common"
 
 [scratchpads."im/telegram"]
-pinned = false
 animation = "fromTop"
-command = "telegram-desktop"
+command = "Telegram"
 match_by = "initialTitle"
 class = "org.telegram.desktop"
 initialTitle = "Telegram"
 size = "30% 80%"
 margin = "10%"
-lazy = true
+use = "windows.app"
 
 # === Shortcuts Menu ===
 [shortcuts_menu]
