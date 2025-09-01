@@ -8,6 +8,8 @@ plugins = [
 
 # === Scratchpads ===
 [scratchpads."windows.common"]
+size = "30% 80%"
+margin = "2%"
 close_on_hide = true
 pinned = true
 lazy = true
@@ -16,21 +18,19 @@ lazy = true
 lazy = true
 
 [scratchpads."windows.terminal"]
-use = "windows.common"
+size = "30% 80%"
+margin = "2%"
 class = "Alacritty"
+use = "windows.common"
 
 [scratchpads."top/gputop"]
 animation = "fromRight"
 command = "alacritty --command amdgpu_top"
-size = "30% 80%"
-margin = "2%"
 use = "windows.terminal"
 
 [scratchpads."top/btop"]
 animation = "fromRight"
 command = "alacritty --command btop"
-size = "30% 80%"
-margin = "2%"
 use = "windows.terminal"
 
 [scratchpads.term]
