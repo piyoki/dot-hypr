@@ -29,7 +29,7 @@ command = "alacritty --command nvtop"
 use = "windows.terminal"
 
 [scratchpads."top/btop"]
-animation = "fromTop"
+animation = "fromRight"
 command = "alacritty --command btop"
 use = "windows.terminal"
 
@@ -38,7 +38,7 @@ animation = "fromTop"
 command = "alacritty"
 use = "windows.terminal"
 
-[scratchpads.volumecontrol]
+[scratchpads.volume]
 animation = "fromTop"
 command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
