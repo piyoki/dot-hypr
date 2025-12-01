@@ -1,5 +1,5 @@
 [pyprland]
-hyprland_version = "0.52.0"
+hyprland_version = "0.52.1"
 plugins = [
   "scratchpads",
   "shortcuts_menu",
