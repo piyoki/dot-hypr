@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
-MONITOR=$(wlr-randr | awk '{print $1}' | awk 'NR==1 { print; exit }')
-wlr-randr --output "$MONITOR" --off
+hyprlock &
+sleep 0.2
+hyprctl dispatch dpms off
