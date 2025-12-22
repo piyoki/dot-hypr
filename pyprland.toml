@@ -1,9 +1,9 @@
 [pyprland]
-hyprland_version = "0.52.1"
 plugins = [
   "scratchpads",
   "shortcuts_menu",
-  "layout_center"
+  "layout_center",
+  "toggle_dpms"
 ]
 
 # === Scratchpads ===
