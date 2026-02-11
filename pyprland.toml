@@ -9,7 +9,7 @@ plugins = [
 # === Scratchpads ===
 [scratchpads."windows.common"]
 size = "30% 80%"
-margin = "2%"
+margin = 100
 close_on_hide = true
 pinned = true
 lazy = true
@@ -19,7 +19,7 @@ lazy = true
 
 [scratchpads."windows.terminal"]
 size = "30% 80%"
-margin = "2%"
+margin = 100
 class = "Alacritty"
 use = "windows.common"
 
@@ -37,7 +37,6 @@ use = "windows.terminal"
 animation = "fromTop"
 command = "alacritty"
 size = "30% 60%"
-margin = "10%"
 use = "windows.terminal"
 
 [scratchpads.volume]
@@ -45,7 +44,6 @@ animation = "fromTop"
 command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
 size = "30% 60%"
-margin = "10%"
 use = "windows.common"
 
 [scratchpads."im/telegram"]
@@ -55,7 +53,6 @@ match_by = "initialTitle"
 class = "org.telegram.desktop"
 initialTitle = "Telegram"
 size = "30% 80%"
-margin = "10%"
 use = "windows.app"
 
 # === Shortcuts Menu ===
@@ -88,5 +85,5 @@ parameters = "-dmenu -i -p Menu -theme $HOME/.config/rofi/conf/launcher.rasi"
 
 # === Layout Center ===
 [layout_center]
-margin = [1600, 60]
-offset = [0, 30]
+margin = 60
+offset = 30
